@@ -1,0 +1,55 @@
+
+Search course
+Type to search
+Minimum 3 characters required for search
+1.1.4. Relational Operators
+47:49
+Write a C program that demonstrates the use of relational operators ( <, <=, >, >=, ==, != ). Prompt the user to enter two integer values and then use relational operators to compare the numbers and print the results.
+
+
+
+Input Format:
+
+The program prompts the user to enter two integers separated by spaces.
+
+
+Output Format:
+
+The program prints "True" or "False" for various comparison operations between the two integers, with each result on a new line.
+
+
+#include <stdio.h>
+void main(){
+int a, b;
+	printf("Enter two numbers: ");
+	scanf("%d %d", &a, &b);
+
+		if(a < b)
+	printf("%d < %d: True\n", a, b);
+		else 
+	printf("%d < %d: False\n", a, b);
+
+
+
+		if(a <= b)
+	printf("%d <= %d: True\n", a ,b);
+	else
+	printf("%d <= %d: False\n", a, b);
+
+
+		if(a > b)
+	printf("%d > %d: True\n", a, b);
+
+	else
+	printf("%d > %d: False\n", a, b);
+
+
+
+		if(a >= b)
+	printf("%d >= %d: True\n", a, b);
+
+	else
+	printf("%d >= %d: False\n", a, b);
+
+
+
