@@ -1,0 +1,62 @@
+1.2.3. Roots and Nature of Quadratic Equation
+42:53
+Write a C program to find the roots and nature of the roots of a quadratic equation, given its coefficients.
+
+
+
+Input Format:
+
+The program prompts the user with:
+
+Enter coefficients a, b and c: <a> <b> <c>
+Input consists of three float values (
+, 
+, and 
+) separated by spaces.
+
+
+Output Format:
+
+The output depends on the discriminant value 
+, with the following possibilities:
+
+If the roots are real and different (discriminant > 0):
+root1 = <value1> and root2 = <value2>
+If the roots are real and the same (discriminant == 0):
+root1 = root2 = <value>
+If the roots are complex (discriminant < 0):
+root1 = <real>+<imag>i and root2 = <real>-<imag>i
+where all the roots are float values formatted to two decimals.
+
+
+#include <stdio.h>
+#include <math.h>
+
+void main() {
+    float a, b, c;
+    printf("Enter coefficients a, b and c: ");
+    scanf("%f %f %f", &a, &b, &c);
+
+    float D, root1, root2, real, imag;
+    D = (b * b) - (4 * a * c);
+
+    if (D > 0) { // real and different
+        root1 = (-b + sqrt(D)) / (2 * a);
+        root2 = (-b - sqrt(D)) / (2 * a);
+        printf("root1 = %.2f and root2 = %.2f\n", root1, root2);
+    } 
+    else if (D == 0) { // real and equal
+        root1 = -b / (2 * a);
+        printf("root1 = root2 = %.2f\n", root1);
+    } 
+    else { // complex roots
+        real = -b / (2 * a);
+        imag = sqrt(-D) / (2 * a);
+        printf("root1 = %.2f+%.2fi and root2 = %.2f-%.2fi\n", real, imag, real, imag);
+}
+}
+
+Reason for late submission
+Type reason here
+Please enter at least 15 characters
+
