@@ -1,0 +1,42 @@
+
+2.2.1. Usage of strcat() function
+01:16
+Write a C program that reads two strings 
+ and 
+ from the user and concatenates two strings using the strcat() function.
+
+
+
+Input Format:
+
+The first line contains the first string 
+ (up to 99 characters).
+The second line contains the second string 
+ (up to 99 characters).
+
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+	char str1[100];  // First string
+	char str2[100];  // Second string
+
+
+    // Read input strings
+    scanf("%s", str1);
+    scanf("%s", str2);
+
+    // Concatenate str2 to str1
+    strcat(str1, str2);
+
+	// Print the concatenated result
+	printf("%s\n", str1);
+	
+	return 0;
+}
+
+Reason for late submission
+Type reason here
+Please enter at least 15 characters
+
