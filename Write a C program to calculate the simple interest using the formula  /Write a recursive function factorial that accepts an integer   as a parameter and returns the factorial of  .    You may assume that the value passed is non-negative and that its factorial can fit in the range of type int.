@@ -1,0 +1,43 @@
+
+3.1.4. Factorial Using Recursion
+08:01
+Write a recursive function factorial that accepts an integer 
+ as a parameter and returns the factorial of 
+.
+
+
+
+You may assume that the value passed is non-negative and that its factorial can fit in the range of type int.
+
+
+
+Input Format:
+
+The first line is the integer that represents the number of test cases.
+Each test case will contain a single integer 
+ where 
+
+#include <stdio.h>
+int factorial(int n)
+{
+    if((n==0)||(n==1))
+		return 1;
+	else
+return n * factorial (n-1);
+}
+int main()
+{
+   int T, no;
+   scanf("%d",&T);
+   while(T--)
+   {
+     scanf("%d",&no);
+     printf("%d\n",factorial(no));
+   }
+ return 0;
+}
+
+Reason for late submission
+Type reason here
+Please enter at least 15 characters
+
