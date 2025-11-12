@@ -1,0 +1,94 @@
+You are provided with an enum to track whether the union currently holds an integer or a floating-point number, as well as a union capable of storing either an int or a float. Write a C program that:
+
+1. Defines a structure containing:
+
+A member of the provided enum type to track the type of data currently stored.
+A member of the provided union type to store either an integer or a floating-point value.
+2. Declares two variables of this structure type.
+
+3. Reads an integer value from the user, stores it in the first variable, and sets the type tracker accordingly.
+
+4. Clears the input buffer to ensure the next input is read correctly.
+
+5. Reads a floating-point value from the user, stores it in the second variable, and sets the type tracker accordingly.
+
+6. Prints the contents of the first variable:
+
+If the stored type is integer, print using 
+.
+If the stored type is floating-point, print using 
+.
+7. Prints the contents of the second variable:
+
+If the stored type is integer, print using 
+.
+If the stored type is floating-point, print using 
+.
+
+
+Input Format:
+
+The first line prompts the user to input an integer value.
+The second line prompts the user to input a floating-point value.
+
+
+Output Format:
+
+The first line should display the first variable, which is the integer value.
+The second line should display the second variable, which is the floating-point value, formatted to one decimal place.
+
+
+﻿Note: The partial code has been provided to you in the editor, and you are required to fill in the missing code.
+
+
+
+#include <stdio.h>
+
+// Define the enum for type tracking
+enum DataType {
+    INT_TYPE,
+    FLOAT_TYPE
+};
+
+// Define the union to hold either an int or a float
+union DataValue {
+    int i;
+    float f;
+};
+
+// Define the structure that combines the enum and union
+struct Data {
+    enum DataType type;
+    union DataValue value;
+};
+
+int main() {
+    struct Data d1, d2;
+
+    // Input integer
+    printf("Enter an integer value: ");
+    scanf("%d", &d1.value.i);
+    d1.type = INT_TYPE;
+
+    // Clear input buffer (important before reading float)
+    while (getchar() != '\n'); 
+
+    // Input float
+    printf("Enter a floating-point value: ");
+    scanf("%f", &d2.value.f);
+    d2.type = FLOAT_TYPE;
+
+    // Display first variable (integer)
+    if (d1.type == INT_TYPE)
+        printf("First variable: %d\n", d1.value.i);
+    else
+        printf("First variable: %.1f\n", d1.value.f);
+
+    // Display second variable (float)
+    if (d2.type == FLOAT_TYPE)
+        printf("Second variable: %.1f\n", d2.value.f);
+    else
+        printf("Second variable: %d\n", d2.value.i);
+
+    return 0;
+}
