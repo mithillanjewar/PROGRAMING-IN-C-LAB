@@ -1,0 +1,42 @@
+2.1.2. Array Sum of Positives and Negatives
+13:32
+Write a C program to find the sum of positive and negative elements of a one - dimensional array.
+
+
+
+Input Format:
+
+The first line contains an integer 
+, which represents the number of elements in the array.
+The second line contains 
+ space-separated integers, representing the elements of the array.
+
+
+Output Format:
+
+The first line displays the sum of all positive elements in the array.
+The second line displays the sum of all negative elements in the array.
+
+
+#include <stdio.h>
+
+void main() {
+int n, i, sumPos = 0, sumNeg = 0;
+scanf("%d", &n);
+int arr[n];
+for(i = 0; i < n; i++) {
+scanf("%d", &arr[i]);
+}
+for(i = 0; i < n; i++) {
+if(arr[i] > 0)
+sumPos += arr[i];
+else
+sumNeg += arr[i];
+}
+printf("%d\n", sumPos);
+printf("%d\n", sumNeg);
+}
+Reason for late submission
+Type reason here
+Please enter at least 15 characters
+
