@@ -1,0 +1,64 @@
+1.2.2. Check Whether a Given Input Integer is in Between Two Values x and y.
+15:33
+Write a C program to check whether a given integer is in between two specified values, 
+ (lower bound) and 
+ (upper bound), inclusive.
+
+
+
+Input Format:
+
+The first line contains an integer 
+ — the lower bound.
+The second line contains an integer 
+ — the upper bound.
+The third line contains an integer 
+ — the number to check.
+
+
+Output Format:
+
+If 
+ is between 
+ and 
+ (inclusive), print:
+num is in between x and y
+Otherwise, print:  
+num is not in between x and y
+Replace 
+ and 
+ with their actual values in the output.
+
+
+#include <stdio.h>
+
+int main() {
+	int x, y, num;
+	
+	// Input the values of x, y, and num
+	printf("lower bound(x): ");
+	scanf("%d", &x);
+	
+	printf("upper bound(y): ");
+	scanf("%d", &y);
+	
+	printf("number to check: ");
+	scanf("%d", &num);
+	
+	// Check if num is between x and y
+	if( num >= x && num<= y)
+	{printf("%d is in between %d and %d", num, x , y);}
+	else{
+		printf("%d is not in between %d and %d", num, x , y);}
+	
+	
+	
+	return 0;
+}
+
+
+
+Reason for late submission
+Type reason here
+Please enter at least 15 characters
+
