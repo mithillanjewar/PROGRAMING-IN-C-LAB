@@ -1,0 +1,117 @@
+4.1.2. CGPA Using Structure
+15:53
+Write a C program that defines a structure to store information about a student. The structure should include the student's name, marks in five subjects, and the CGPA. Your program should read the student's name (which may contain spaces) and their marks in five subjects, each out of 100. Using this information, calculate the CGPA on a 5.0 scale, where
+
+ 
+
+
+
+After calculating the CGPA, display the student's transcript, including their name, the CGPA rounded to two decimal places, and their academic classification. Based on the CGPA, the program should display the class obtained using the following criteria:
+
+CGPA ≥ 4.5: First Class
+CGPA ≥ 3.5 and < 4.5: Second Class
+CGPA ≥ 2.5 and < 3.5: Third Class
+CGPA < 2.5: Fail
+
+
+Input Format:
+
+First line: A string denoting the name of the student (can contain spaces).
+Second line: Five floating-point numbers separated by spaces, representing the marks in 5 subjects (each out of 100).
+
+
+Output Format:
+
+A line showing the student's name (as entered).
+A line displaying the CGPA, rounded to 2 decimal places.
+A line showing the class obtained.
+
+
+Note: Partial code is provided, and you are required to fill in the missing parts.
+
+
+Sample Test Cases
+
+structureCGPA.c
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+⌄
+⌄
+⌄
+⌄
+⌄
+⌄
+⌄
+⌄
+#include <stdio.h>
+
+// Define a simple structure for Student
+struct Student {
+	char name[50];
+	float marks1, marks2, marks3, marks4, marks5;
+	float cgpa;
+};
+
+// Function to calculate CGPA
+float getCGPA(float m1, float m2, float m3, float m4, float m5) {
+	float total = m1 + m2 + m3 + m4 + m5;
+	return (total / 500) * 5;
+	//write code
+    
+}
+
+// Function to print class based on CGPA
+void printClass(float cgpa) {
+	//write code
+	if (cgpa >= 4.5) 
+		{printf("Class: First Class\n");
+		}
+	else if (cgpa >= 4)
+	{printf("Class: Second Class\n");
+	}
+	else if (cgpa >= 2.5)
+	{printf("Class: Third Class\n");
+	}
+	else
+	{printf("Class: Fail\n");
+	}
+}
+
+int main() {
+	struct Student s;
+
+
