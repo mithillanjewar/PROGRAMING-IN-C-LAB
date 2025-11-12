@@ -1,0 +1,57 @@
+
+1.2.4. Number of Days in the Month using switch
+02:02
+Write the C program to Input month number and print number of days in that month using switch.
+
+
+
+Input Format:
+
+A single integer representing the month number (1 to 12).  
+
+
+Output Format:
+
+If the month has 31 days, print 31 days.  
+If the month has 30 days, print 30 days.  
+If the month is February, print 28 or 29 days.  
+If the input is invalid (not between 1 and 12), print Invalid month number.
+
+
+#include <stdio.h>
+
+int main() {
+    int month;
+    printf("Enter month number: ");
+    scanf("%d", &month);
+
+    switch (month) {
+        case 1:  // January
+        case 3:  // March
+        case 5:  // May
+        case 7:  // July
+        case 8:  // August
+        case 10: // October
+        case 12: // December
+            printf("31 days\n");
+            break;
+
+        case 4:  // April
+        case 6:  // June
+        case 9:  // September
+        case 11: // November
+            printf("30 days\n");
+            break;
+
+        case 2:  // February
+            printf("28 or 29 days\n");
+            break;
+
+        default:
+            printf("Invalid month number\n");
+    }
+
+    return 0;
+}
+
+
